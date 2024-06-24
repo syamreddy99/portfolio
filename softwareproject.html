@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skincare Products Website Project</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #fff;
+            padding: 20px 0;
+            border-bottom: 3px solid #77a6f7;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            font-size: 2em;
+            margin: 0;
+            padding-left: 20px;
+        }
+        header nav {
+            display: flex;
+            align-items: center;
+        }
+        header nav a {
+            margin-left: 20px;
+            font-size: 1.1em;
+            text-decoration: none;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        header nav a:hover {
+            background-color: #ffd700;
+            color: #333;
+        }
+        .content {
+            padding: 20px;
+            background: #fff;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .content h2 {
+            color: #6a11cb;
+            border-bottom: 2px solid #6a11cb;
+            padding-bottom: 5px;
+        }
+        .card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .card img {
+            width: 100%;
+            max-width: 250px;
+            border-radius: 10px;
+        }
+        .card h3 {
+            margin: 10px 0;
+            color: #6a11cb;
+        }
+        .card p {
+            margin: 5px 0;
+            color: #777;
+            text-align: center;
+        }
+        .btn {
+            background-color: #f4c805;
+            color: #000000;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1em;
+            margin: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1> PROJECT - SKINCARE PRODUCTS </h1>
+        <nav>
+            <a onclick="scrollToSection('objective')">Objective</a>
+            <a onclick="scrollToSection('technology')">Technology</a>
+            <a onclick="scrollToSection('description')">Description</a>
+            <a onclick="scrollToSection('implementation')">Implementation</a>
+            <a onclick="scrollToSection('enhancements')">Enhancements</a>
+            <a href="https://github.com/yourusername/yourrepository" target="_blank" class="btn ">GitHub</a> <br> <br>
+            <a href="https://yourprojecthost.com/yourproject" target="_blank" class="btn ">Project Hosting</a>
+        </nav>
+    </div>
+</header>
+
+<div class="container">
+    <div class="content" id="objective">
+        <h2>Objective</h2>
+        <p>To develop an interactive and user-friendly web platform that consolidates various skincare products, allowing users to easily search, filter, and purchase products, while providing robust management tools for administrators.</p>
+    </div>
+
+    <div class="content" id="technology">
+        <h2>Technology</h2>
+        <ul>
+            <li><strong>Languages:</strong> HTML, CSS, JavaScript</li>
+            <li><strong>Libraries:</strong> jQuery, AJAX</li>
+            <li><strong>Framework:</strong> Bootstrap</li>
+            <li><strong>Back-End:</strong> Java, JSP, Servlets</li>
+            <li><strong>Database:</strong> MySQL</li>
+            <li><strong>Architecture:</strong> MVC (Model-View-Controller)</li>
+        </ul>
+    </div>
+
+    <div class="content" id="description">
+        <h2>Description</h2>
+        <p>This website consolidates various skincare products into one platform, allowing users to browse and search for products with filters for different categories and price ranges. The website includes a login page, and after logging in, users are greeted with a personalized welcome message displaying their name. An admin page allows administrators to add new products to the customer-facing page. This project aims to provide a seamless and efficient way for users to find and purchase skincare products while also offering robust management tools for administrators.</p>
+    </div>
+
+    <div class="content" id="implementation">
+        <h2>Implementation Steps</h2>
+        <h3>Front-End Development:</h3>
+        <ul>
+            <li>Design the user interface using HTML, CSS, and Bootstrap for responsiveness.</li>
+            <li>Implement dynamic functionalities using JavaScript, jQuery, and AJAX.</li>
+        </ul>
+        <h3>Back-End Development:</h3>
+        <ul>
+            <li>Set up the server using JSP and Servlets.</li>
+            <li>Implement the MVC architecture to separate concerns and enhance maintainability.</li>
+        </ul>
+        <h3>Database Design:</h3>
+        <ul>
+            <li>Create a MySQL database to store product information, user details, and transaction records.</li>
+            <li>Develop SQL queries for data retrieval and manipulation.</li>
+        </ul>
+        <h3>User Authentication:</h3>
+        <ul>
+            <li>Implement user registration and login functionalities.</li>
+            <li>Ensure secure handling of user credentials.</li>
+        </ul>
+        <h3>Admin Panel:</h3>
+        <ul>
+            <li>Develop an admin interface for product management.</li>
+            <li>Implement features to add, update, and delete products.</li>
+        </ul>
+        <h3>Testing and Deployment:</h3>
+        <ul>
+            <li>Test the website for functionality, usability, and security.</li>
+            <li>Deploy the website on a web server and ensure it is accessible to users.</li>
+        </ul>
+    </div>
+
+    <div class="content" id="enhancements">
+        <h2>Future Enhancements</h2>
+        <ul>
+            <li>Integration with payment gateways for seamless transactions.</li>
+            <li>User reviews and rating system for products.</li>
+            <li>Recommendation engine based on user preferences and purchase history.</li>
+            <li>Enhanced security features like two-factor authentication.</li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <h2>Product Display</h2>
+        <div class="card">
+            <img src="img/Screenshot (29).png" alt="Mcaffeine">
+            <h3>Login Page</h3>
+            <p>Enhanced user login experience.</p>
+            <a href="#" class="btn">Learn More</a>
+        </div>
+        <div class="card">
+            <img src="img/Screenshot (30).png" alt="Neutrogena">
+            <h3>Product Page</h3>
+            <p>Detailed product information and purchasing options.</p>
+            <a href="#" class="btn">Learn More</a>
+        </div>
+    </div>
+</div>
+
+
+<footer>
+    <p>Skincare Products Website Project &copy; 2024</p>
+</footer>
+
+<script>
+   
+
+    function scrollToSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
