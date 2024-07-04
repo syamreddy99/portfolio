@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Management App Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            background: #77aaff;
+            padding: 10px 0;
+        }
+        nav ul {
+            padding: 0;
+            list-style: none;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            padding: 0 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .github-button {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .github-button:hover {
+            background-color: #555;
+        }
+        section#main {
+            padding: 20px;
+            background: #fff;
+            margin: 20px 0;
+        }
+        h2 {
+            color: #333;
+        }
+        code {
+            background: #e4e4e4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        pre {
+            background: #e4e4e4;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        footer {
+            padding: 20px;
+            margin-top: 20px;
+            color: #fff;
+            background-color: #333;
+            text-align: center;
+        }
+        .accordion {
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+        .active, .accordion:hover {
+            background-color: #77aaff;
+            color: white;
+        }
+        .panel {
+            padding: 0 18px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bank Management App Documentation</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#structure">Structure</a></li>
+            <li><a href="#endpoints">Endpoints</a></li>
+            <li><a href="#postman">Postman Requests</a></li>
+        </ul>
+    </nav>
+    <a href="https://github.com/syamreddy99/BankManagement" class="github-button" target="_blank">View on GitHub</a>
+    <section id="main" class="container">
+        <h2 id="overview">Project Overview</h2>
+        <p>The Bank Management Application allows users to perform various banking operations such as creating accounts, viewing account details, depositing money, withdrawing money, and closing accounts. The application is built using Spring Boot and connects to a MySQL database.</p>
+        
+        <h2 id="structure">Project Structure</h2>
+        <button class="accordion">Entity</button>
+        <div class="panel">
+            <p><strong>Entity:</strong> <code>Account</code> - Represents the account entity with fields for account number, account holder name, and account balance.</p>
+        </div>
+
+        <button class="accordion">Repository</button>
+        <div class="panel">
+            <p><strong>Repository:</strong> <code>AccountRepository</code> - Extends JpaRepository to provide CRUD operations for the Account entity.</p>
+        </div>
+
+        <button class="accordion">Service</button>
+        <div class="panel">
+            <p><strong>Service:</strong> <code>AccountService</code> and <code>ServiceImplementation</code> - Contains the business logic for managing accounts.</p>
+        </div>
+
+        <button class="accordion">Controller</button>
+        <div class="panel">
+            <p><strong>Controller:</strong> <code>AccountController</code> - Handles HTTP requests and maps them to the appropriate service methods.</p>
+        </div>
+
+        <h2 id="endpoints">Endpoints</h2>
+        <button class="accordion">Create Account</button>
+        <div class="panel">
+            <pre><code>POST /Account/create</code></pre>
+            <p>Body (JSON):
+                <pre><code>{
+  "account_holder_name": "John Doe",
+  "account_balance": 1000.00
+}</code></pre>
+            </p>
+        </div>
+
+        <button class="accordion">Get Account Details by Account Number</button>
+        <div class="panel">
+            <pre><code>GET /Account/{accountNumber}</code></pre>
+            <p>Example:
+                <pre><code>GET /Account/1</code></pre>
+            </p>
+        </div>
+
+        <button class="accordion">Get All Account Details</button>
+        <div class="panel">
+            <pre><code>GET /Account/allAccountsDetails</code></pre>
+        </div>
+
+        <button class="accordion">Deposit Money</button>
+        <div class="panel">
+            <pre><code>POST /Account/deposit/{accountNumber}/{depositedMoney}</code></pre>
+            <p>Example:
+                <pre><code>POST /Account/deposit/1/500.00</code></pre>
+            </p>
+        </div>
+
+        <button class="accordion">Withdraw Money</button>
+        <div class="panel">
+            <pre><code>POST /Account/withdraw/{accountNumber}/{withdrawMoney}</code></pre>
+            <p>Example:
+                <pre><code>POST /Account/withdraw/1/200.00</code></pre>
+            </p>
+        </div>
+
+        <button class="accordion">Close Account</button>
+        <div class="panel">
+            <pre><code>POST /Account/close/{accountNumber}</code></pre>
+            <p>Example:
+                <pre><code>POST /Account/close/1</code></pre>
+            </p>
+        </div>
+
+        <h2 id="postman">Postman Requests</h2>
+        <p>Below are the Postman requests to test the endpoints:</p>
+        
+        <h3>Create Account</h3>
+        <pre><code>POST http://localhost:9976/Account/create
+Content-Type: application/json
+
+{
+  "account_holder_name": "John Doe",
+  "account_balance": 1000.00
+}</code></pre>
+        
+        <h3>Get Account Details</h3>
+        <pre><code>GET http://localhost:9976/Account/1</code></pre>
+
+        <h3>Get All Account Details</h3>
+        <pre><code>GET http://localhost:9976/Account/allAccountsDetails</code></pre>
+
+        <h3>Deposit Money</h3>
+        <pre><code>POST http://localhost:9976/Account/deposit/1/500.00</code></pre>
+
+        <h3>Withdraw Money</h3>
+        <pre><code>POST http://localhost:9976/Account/withdraw/1/200.00</code></pre>
+
+        <h3>Close Account</h3>
+        <pre><code>POST http://localhost:9976/Account/close/1</code></pre>
+    </section>
+    <footer>
+        <p>Bank Management App &copy; 2024</p>
+    </footer>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        for (var i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
